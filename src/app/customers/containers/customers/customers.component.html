@@ -1,0 +1,13 @@
+<div
+  class="content-container"
+  fxLayout="row"
+  fxLayout.xs="column"
+  fxLayoutGap="40px"
+>
+  <div fxFlex.sm="100" fxFlex="100">
+    <app-customer-list
+      [customers]="customers"
+      (select)="(null)"
+    ></app-customer-list>
+  </div>
+</div>

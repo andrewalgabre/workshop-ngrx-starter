@@ -1,0 +1,20 @@
+<mat-toolbar class="mat-elevation" color="primary">
+  <div fxFlex fxLayout fxLayoutAlign="flex-end">
+    <button mat-icon-button (click)="onClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-nav-list class="sidenav-list">
+  <a
+    *ngFor="let menuItem of menuItems"
+    class="menu-items"
+    mat-list-item
+    [routerLink]="menuItem.route"
+    (click)="emitItemClick(menuItem.name)"
+  >
+    <mat-icon>{{ menuItem.icon }}</mat-icon>
+    <span class="nav-caption ">{{ menuItem.text }}</span>
+  </a>
+</mat-nav-list>

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+table {
+  width: 100%;
+  .selected {
+    background-color: rgb(238, 238, 238);
+    font-weight: bold;
+  }
+  tr.table-row:hover {
+    cursor: pointer;
+  }
+  tr.mat-footer-row {
+    font-weight: bold;
+  }
+}
