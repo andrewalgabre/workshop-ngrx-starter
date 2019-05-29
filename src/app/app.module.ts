@@ -13,11 +13,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutModule } from './layout/layout.module';
 import { CustomersModule } from './customers/customers.module';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { reducers, metaReducers } from './store/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { CustomerEffects } from './store/effects/customer.effects';
+import { CounterModule } from './counter/counter.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +36,8 @@ import { CustomerEffects } from './store/effects/customer.effects';
     CustomersModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot([CustomerEffects])
+    EffectsModule.forRoot([CustomerEffects]),
+    CounterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

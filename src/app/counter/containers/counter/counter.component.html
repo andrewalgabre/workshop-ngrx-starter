@@ -1,0 +1,14 @@
+<h1>Counter</h1>
+<button color="primary" mat-raised-button (click)="increment()">
+  Increment
+</button>
+
+<div>Current Count: {{ count$ | async }}</div>
+
+<button color="primary" mat-raised-button (click)="decrement()">
+  Decrement
+</button>
+
+<button color="secondary" mat-raised-button (click)="reset()">
+  Reset Counter
+</button>
