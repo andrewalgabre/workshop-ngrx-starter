@@ -9,15 +9,11 @@ export class HeaderComponent implements OnInit {
   @Input() menuItems: any[];
   @Input() loggedIn: boolean;
   @Output() menuClick = new EventEmitter<string>();
-  @Output() sidenavToggle = new EventEmitter<void>();
+  @Output() openSideNav = new EventEmitter<void>();
 
   constructor() {}
 
   ngOnInit() {}
-
-  onToggleSidenav() {
-    this.sidenavToggle.emit();
-  }
 
   emitItemClick(eventName: string) {
     this.menuClick.emit(eventName);
