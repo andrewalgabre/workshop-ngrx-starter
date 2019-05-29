@@ -23,23 +23,4 @@ export class CustomerListComponent implements OnInit {
   displayedColumns: string[] = ['lastname', 'firstname', 'company', 'street'];
 
   ngOnInit() {}
-
-  selectByIndex(index) {
-    this.customers.forEach((element, i) => {
-      this.customers[i] = { ...element, selected: false };
-    });
-
-    const selectedCustomer = this.customers[index] as any;
-
-    if (this.previousSelectedCustomerId === selectedCustomer.id) {
-      return;
-    }
-
-    this.customers[index] = { ...selectedCustomer, selected: true } as any;
-    this.customers = [...this.customers];
-
-    this.previousSelectedCustomerId = selectedCustomer.id;
-
-    this.select.emit(this.customers[index]);
-  }
 }

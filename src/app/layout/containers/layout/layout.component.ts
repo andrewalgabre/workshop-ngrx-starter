@@ -14,6 +14,12 @@ import { Observable } from 'rxjs';
 export class LayoutComponent implements OnInit {
   menuItems = [
     {
+      text: 'Home',
+      route: '/',
+      name: 'Home',
+      icon: 'home'
+    },
+    {
       text: 'Kunden',
       route: '/customers',
       name: 'customers',

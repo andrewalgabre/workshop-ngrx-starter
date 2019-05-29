@@ -1,0 +1,68 @@
+<div fxLayout="row" fxLayoutGap="20px" class="content-container">
+  <mat-card fxFlex.lt-md="100" fxFlex="50">
+    <mat-card-header *ngIf="customerForm.value.id; else newTemplate">
+      <mat-card-title>
+        <h1 *ngIf="customerForm.value.firstname || customerForm.value.lastname">
+          {{ customerForm.value.firstname }} {{ customerForm.value.lastname }}
+        </h1>
+        <h1
+          *ngIf="!(customerForm.value.firstname || customerForm.value.lastname)"
+        >
+          Kunde
+        </h1>
+        <ng-container *ngIf="customerForm.value && customerForm.value.id">
+          <button
+            mat-icon-button
+            class="card-buttons"
+            [matMenuTriggerFor]="menu"
+            aria-label="Toggle menu"
+          >
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item>Löschen</button>
+          </mat-menu>
+        </ng-container>
+      </mat-card-title>
+      <mat-card-subtitle>{{ customerForm.value.company }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <ng-template #newTemplate>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>Neuer Kunde</h1>
+        </mat-card-title>
+      </mat-card-header>
+    </ng-template>
+
+    <mat-card-content>
+      <fe-customer-form
+        [genders]="genders"
+        [formGroup]="customerForm"
+      ></fe-customer-form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        [disabled]="!customerForm.valid || customerForm.pristine"
+        (click)="save(customerForm.value)"
+        color="primary"
+        mat-raised-button
+      >
+        Speichern
+      </button>
+      <button (click)="back()" mat-button>Zurück</button>
+    </mat-card-actions>
+  </mat-card>
+  <!-- <mat-card fxFlex="50">
+    <mat-card-header>
+      <mat-card-title>Auftragspositionen</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-customer-form></app-customer-form>
+    </mat-card-content>
+    <mat-card-actions>
+
+
+    </mat-card-actions>
+  </mat-card> -->
+</div>

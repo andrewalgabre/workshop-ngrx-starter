@@ -1,9 +1,18 @@
 <div
   class="content-container"
-  fxLayout="row"
+  fxLayout="column"
   fxLayout.xs="column"
   fxLayoutGap="40px"
+  fxLayoutGap="20px"
 >
+  <div class="title-container"></div>
+
+  <div class="content-container">
+    <button mat-raised-button color="primary" [routerLink]="['new']">
+      <mat-icon>add</mat-icon>&nbsp;Kunde hinzufügen
+    </button>
+  </div>
+
   <div fxFlex.sm="100" fxFlex="100">
     <app-customer-list
       [customers]="customers"

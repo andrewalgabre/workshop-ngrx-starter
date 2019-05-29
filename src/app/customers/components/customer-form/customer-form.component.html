@@ -1,0 +1,29 @@
+<form [formGroup]="formGroup" autocomplete="off" novalidate>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+    <mat-form-field fxFlex="30">
+      <mat-select formControlName="gender" placeholder="Anrede">
+        <mat-option *ngFor="let gender of genders" [value]="gender.key">
+          {{ gender.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+    <mat-form-field fxFlex="50">
+      <input matInput formControlName="firstname" placeholder="Vorname" />
+    </mat-form-field>
+    <mat-form-field fxFlex="50">
+      <input matInput formControlName="lastname" placeholder="Nachname" />
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+    <mat-form-field fxFlex="50">
+      <input matInput formControlName="company" placeholder="Firma" />
+    </mat-form-field>
+    <mat-form-field fxFlex="50">
+      <input matInput formControlName="street" placeholder="Strasse" />
+    </mat-form-field>
+  </div>
+</form>

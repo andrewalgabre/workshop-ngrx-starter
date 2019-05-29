@@ -29,8 +29,6 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr
       mat-row
-      [ngClass]="{ selected: row.selected }"
-      (click)="selectByIndex(i)"
       class="table-row"
       *matRowDef="let row; columns: displayedColumns; let i = index"
     ></tr>

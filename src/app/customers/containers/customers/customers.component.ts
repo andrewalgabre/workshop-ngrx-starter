@@ -19,6 +19,4 @@ export class CustomersComponent implements OnInit {
       this.loading = false;
     });
   }
-
-  // selectCustomer(customer: Customer): void {}
 }

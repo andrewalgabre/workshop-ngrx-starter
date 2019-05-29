@@ -39,4 +39,8 @@ export class CustomerService {
   getAll(): Observable<any[]> {
     return of(this.customers).pipe(delay(2000));
   }
+
+  create(customer: any): Observable<any> {
+    return of(this.customers.push(customer)).pipe(delay(2000));
+  }
 }
