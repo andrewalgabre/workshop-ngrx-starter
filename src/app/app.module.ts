@@ -12,6 +12,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutModule } from './layout/layout.module';
 import { CustomersModule } from './customers/customers.module';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { CustomerEffects } from './store/effects/customer.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +32,10 @@ import { CustomersModule } from './customers/customers.module';
     FlexLayoutModule,
     HttpClientModule,
     LayoutModule,
-    CustomersModule
+    CustomersModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    EffectsModule.forRoot([CustomerEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

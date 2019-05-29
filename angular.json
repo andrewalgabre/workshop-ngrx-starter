@@ -136,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "workshop-ngrx-starter"
+  "defaultProject": "workshop-ngrx-starter",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
