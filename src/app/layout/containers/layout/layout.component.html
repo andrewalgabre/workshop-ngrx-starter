@@ -10,7 +10,7 @@
       [menuItems]="menuItems"
       [loggedIn]="null"
       (menuClick)="onMenuClicked($event)"
-      (sidenavToggle)="sidenav.toggle()"
+      (openSideNav)="sidenav.toggle()"
     ></app-header>
     <main>
       <router-outlet></router-outlet>
