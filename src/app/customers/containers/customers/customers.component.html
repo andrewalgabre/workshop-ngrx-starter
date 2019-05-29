@@ -15,7 +15,7 @@
 
   <div fxFlex.sm="100" fxFlex="100">
     <app-customer-list
-      [customers]="customers"
+      [customers]="customers$ | async"
       (select)="(null)"
     ></app-customer-list>
   </div>
