@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Observable, combineLatest, of } from 'rxjs';
-import { tap, map, delay } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
