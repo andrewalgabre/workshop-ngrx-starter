@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutModule } from './layout/layout.module';
 import { CustomersModule } from './customers/customers.module';
+import { CounterModule } from './counter/counter.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +27,8 @@ import { CustomersModule } from './customers/customers.module';
     FlexLayoutModule,
     HttpClientModule,
     LayoutModule,
-    CustomersModule
+    CustomersModule,
+    CounterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
