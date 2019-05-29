@@ -30,10 +30,7 @@ export class LayoutComponent implements OnInit {
   menuOpen$: Observable<boolean>;
 
   constructor(private store: Store<State>) {
-    this.menuOpen$ = this.store.pipe(
-      tap(console.log),
-      select(state => state.ui.openMenu)
-    );
+    this.menuOpen$ = this.store.pipe(select(state => state.ui.openMenu));
   }
 
   ngOnInit() {}

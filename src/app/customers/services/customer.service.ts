@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
+import { delay, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -31,13 +31,24 @@ export class CustomerService {
       lastname: 'Algabre',
       street: 'Luzernstrasse 1',
       company: 'CSS Versicherung'
+    },
+    {
+      firstname: 'Raphael',
+      lastname: 'Felber',
+      street: 'Luzernstrasse 5',
+      company: 'CSS Versicherung'
     }
   ];
 
   constructor() {}
 
-  getAll(): Observable<any[]> {
-    return of(this.customers).pipe(delay(2000));
+  getAll(): Observable<any[] | string> {
+    return of(this.customers).pipe(
+      // map(() => {
+      //   throw 'ERROR';
+      // }),
+      delay(2000)
+    );
   }
 
   create(customer: any): Observable<any> {
